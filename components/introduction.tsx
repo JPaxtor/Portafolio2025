@@ -3,17 +3,32 @@ import { TypeAnimation } from "react-type-animation";
 
 const Introduction = () => {
   return (
-    <div className="z-20 w-full bg-darkBg/60">
-      <div className="z-20 grid items-center h-full p-6 py-20 md:py-0 md:grid-cols-2">
-        <Image
-          src="/home-4.png"
-          priority
-          width="800"
-          height="800"
-          alt="Avatar"
-        />
-        <div className="flex flex-col justify-center max-w-md">
-          <h1 className="mb-5 text-2xl leading-tight text-center md:text-left md:text-4xl md:mb-10">
+    // Contenedor principal: ocupa todo el ancho y alto, con un fondo semi-transparente.
+    // Usamos 'min-h-screen' para asegurar que cubra toda la altura disponible.
+    <div className="z-20 w-full min-h-screen bg-darkBg/60">
+      {/* Contenedor del contenido: Centra el contenido y define la estructura de rejilla */}
+      <div className="z-20 grid items-center h-full max-w-6xl gap-10 p-6 mx-auto py-20 md:py-0 md:grid-cols-2">
+        {/*
+          1. Sección de la Imagen/Avatar
+          En móviles (por defecto), la imagen estará arriba.
+        */}
+        <div className="flex items-center justify-center">
+          <Image
+            src="/home-4.png"
+            priority
+            width="800"
+            height="800"
+            alt="Avatar"
+            // Clases para que la imagen sea responsiva y se ajuste al contenedor
+            className="object-cover w-full max-w-sm md:max-w-lg"
+          />
+        </div>
+
+        {/*
+          2. Sección del Texto y Botones
+        */}
+        <div className="flex flex-col justify-center max-w-lg mx-auto md:mx-0">
+          <h1 className="mb-5 text-3xl font-extrabold leading-tight text-center sm:text-4xl md:text-left lg:text-5xl md:mb-8">
             Si puedes imaginarlo,
             <br /> puedes
             <TypeAnimation
@@ -25,24 +40,25 @@ const Introduction = () => {
             />
           </h1>
 
-          <p className="mx-auto mb-2 text-xl md:text-xl md:mx-0 md:mb-8">
+          <p className="mx-auto mb-6 text-base text-gray-300 md:text-lg md:mx-0 md:mb-10">
             Como desarrollador full stack, me dedico a combinar diseño y
             funcionalidad para crear experiencias digitales impactantes y
             accesibles.
           </p>
 
-          <div className="flex items-center justify-center gap-3 md:justify-start md:gap-10">
+          {/* Contenedor de Botones */}
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start md:gap-8">
             <a
               href="/portfolio"
-              className="px-3 py-2 my-2 transition-all border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl hover:shadow-white/50"
+              className="w-full text-center sm:w-auto px-6 py-3 transition-all border-2 cursor-pointer text-md rounded-xl hover:shadow-xl hover:shadow-white/50"
             >
               Ver proyectos
             </a>
             <a
               href="/contact"
-              className="px-3 py-2 my-5 transition-all border-2 cursor-pointer text-md w-fit text-secondary border-secondary rounded-xl hover:shadow-xl hover:shadow-secondary"
+              className="w-full text-center sm:w-auto px-6 py-3 transition-all border-2 cursor-pointer text-md text-secondary border-secondary rounded-xl hover:shadow-xl hover:shadow-secondary"
             >
-              Contactame
+              Contáctame
             </a>
           </div>
         </div>
