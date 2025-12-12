@@ -3,14 +3,13 @@ import { TypeAnimation } from "react-type-animation";
 
 const Introduction = () => {
   return (
-    // Contenedor principal: ocupa todo el ancho y alto, con un fondo semi-transparente.
-    // Usamos 'min-h-screen' para asegurar que cubra toda la altura disponible.
-    <div className="z-20 w-full min-h-screen bg-darkBg/60">
+    // CAMBIO CLAVE REFORZADO: Aumentamos el padding-bottom a pb-32.
+    // Esto debería asegurar que el contenido termine muy por encima de la navbar fija.
+    <div className="z-20 w-full min-h-screen bg-darkBg/60 pb-32">
       {/* Contenedor del contenido: Centra el contenido y define la estructura de rejilla */}
       <div className="z-20 grid items-center h-full max-w-6xl gap-10 p-6 mx-auto py-20 md:py-0 md:grid-cols-2">
         {/*
           1. Sección de la Imagen/Avatar
-          En móviles (por defecto), la imagen estará arriba.
         */}
         <div className="flex items-center justify-center">
           <Image
