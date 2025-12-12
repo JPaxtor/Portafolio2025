@@ -22,7 +22,7 @@ const Introduction = () => {
         {/* 2. Sección del Texto y Botones */}
         <div className="flex flex-col justify-center max-w-lg mx-auto md:mx-0">
           <h1 className="mb-5 text-3xl font-extrabold leading-tight text-center sm:text-4xl md:text-left lg:text-5xl md:mb-8">
-            Si puedes imaginarlo,
+            Si puedes imaginarloo,
             <br /> puedes
             <TypeAnimation
               sequence={[" programarlo", 1000, " hacerlo", 1000]}
